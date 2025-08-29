@@ -1,4 +1,4 @@
-# micropython-ota
+# pico_lte_ota
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/olivergregorius/micropython_ota/build.yml?branch=main&label=Python%20Build&logo=github)](https://github.com/olivergregorius/micropython_ota/actions/workflows/build.yml)
 [![Python Versions](https://img.shields.io/pypi/pyversions/micropython-ota?label=Python)](https://pypi.org/project/micropython-ota/)
@@ -7,7 +7,7 @@
 
 ## Introduction
 
-Micropython library for upgrading code over-the-air (OTA)
+Micropython library for upgrading code over-the-air (OTA) - Sixfab Pico LTE port
 
 ## Preparation
 
@@ -15,6 +15,7 @@ For OTA updates to work an HTTP/HTTPS server like Apache or nGinx is required to
 and multiple projects at once. There are two supported directory structures of which one must be provided for the OTA updates to work:
 
 1. Version as prefix (default)
+
     ```
     server-root/
     |- <project_name>/
@@ -30,6 +31,7 @@ and multiple projects at once. There are two supported directory structures of w
     ```
 
 2. Version as subdirectory (by setting the parameter `use_version_prefix` to `False`, see [Usage](#usage))
+
     ```
     server-root/
     |- <project_name>/
@@ -172,6 +174,7 @@ micropython_ota.ota_update(ota_host, project_name, filenames, user=user, passwd=
 ```
 
 There are plenty of tutorials online on how to set up secured HTTP file access on your webserver, but the basic steps are:
+
 - get and install an SSL certificate (Let's Encrypt is by far the best choice)
 - enable HTTPS access on your web server
 - prevent directories from listing files
