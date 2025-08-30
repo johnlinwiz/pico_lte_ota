@@ -182,3 +182,19 @@ def ota_update(
             if hard_reset_device:
                 print("Hard-resetting device...")
                 reset()
+
+
+def check_for_ota_update(
+    host, project, user=None, passwd=None, timeout=5, soft_reset_device=False
+):
+    auth = generate_auth(user, passwd)
+    version_changed, remote_version = check_version(
+        host, project, auth=auth, timeout=timeout
+    )
+    if version_changed:
+        if soft_reset_device:
+            print(f"Found new version {remote_version}, soft-resetting device...")
+            soft_reset()
+        else:
+            print(f"Found new version {remote_version}, hard-resetting device...")
+            reset()
