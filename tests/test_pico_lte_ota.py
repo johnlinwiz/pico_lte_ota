@@ -3,12 +3,13 @@ import sys
 import unittest
 from unittest.mock import Mock, patch
 
+import pico_lte_ota
+from mocks import pico_lte_ota_mock, urequests_mock
+
 sys.modules["machine"] = Mock()
 sys.modules["urequests"] = Mock()
 sys.modules["uos"] = __import__("os")
 sys.modules["ubinascii"] = __import__("binascii")
-import pico_lte_ota
-from mocks import pico_lte_ota_mock, urequests_mock
 
 
 class TestMicropythonOTA(unittest.TestCase):
@@ -148,9 +149,7 @@ class TestMicropythonOTA(unittest.TestCase):
             "http://example.org/sample/v1.0.1_main.py", timeout=5
         )
 
-    @patch(
-        "micropython_ota.check_version", micropython_ota_mock.mock_check_version_true
-    )
+    @patch("micropython_ota.check_version", pico_lte_ota_mock.mock_check_version_true)
     @patch("urequests.get", urequests_mock.mock_get)
     def test_ota_update_on_version_changed_with_version_subdirectory_structure(self):
         pico_lte_ota.ota_update(
