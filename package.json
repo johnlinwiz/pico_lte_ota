@@ -1,0 +1,27 @@
+{
+    "urls": [
+        [
+            "pico_lte_ota.py",
+            "pico_lte_ota.py"
+        ]
+    ],
+    "deps": [
+        [
+            "collections-defaultdict",
+            "latest"
+        ],
+        [
+            "os-path",
+            "latest"
+        ],
+        [
+            "github:org/micropython-additions",
+            "main"
+        ],
+        [
+            "gitlab:org/micropython-otheradditions",
+            "main"
+        ]
+    ],
+    "version": "0.9"
+}
