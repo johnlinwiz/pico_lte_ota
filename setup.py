@@ -22,7 +22,7 @@ setup(
     description="Micropython library for upgrading code over-the-air (OTA) - Sixfab Pico LTE version",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    packages=find_packages(),
+    packages=[""],
     project_urls={"Source": "https://github.com/johnlinwiz/pico_lte_ota"},
     author="John Lin",
     author_email="johnlinwiz@gmail.com",
