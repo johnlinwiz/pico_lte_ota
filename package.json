@@ -13,10 +13,6 @@
         [
             "os-path",
             "latest"
-        ],
-        [
-            "github:sixfab/pico_lte_micropython-sdk",
-            "main"
         ]
     ],
     "version": "0.9"
