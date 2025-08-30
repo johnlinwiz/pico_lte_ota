@@ -1,13 +1,13 @@
 # pico_lte_ota
 
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/olivergregorius/micropython_ota/build.yml?branch=main&label=Python%20Build&logo=github)](https://github.com/olivergregorius/micropython_ota/actions/workflows/build.yml)
-[![Python Versions](https://img.shields.io/pypi/pyversions/micropython-ota?label=Python)](https://pypi.org/project/micropython-ota/)
-[![GitHub](https://img.shields.io/github/license/olivergregorius/micropython_ota?label=License)](https://github.com/olivergregorius/micropython_ota/blob/HEAD/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/micropython-ota?label=PyPI)](https://pypi.org/project/micropython-ota/)
+[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/johnlinwiz/pico_lte_ota/build.yml?branch=main&label=Python%20Build&logo=github)](https://github.com/johnlinwiz/pico_lte_ota/actions/workflows/build.yml)
+[![Python Versions](https://img.shields.io/pypi/pyversions/pico-lte-ota?label=Python)](https://pypi.org/project/pico-lte-ota/)
+[![GitHub](https://img.shields.io/github/license/johnlinwiz/pico_lte_ota?label=License)](https://github.com/johnlinwiz/pico_lte_ota/blob/HEAD/LICENSE)
+[![PyPI](https://img.shields.io/pypi/v/pico-lte-ota?label=PyPI)](https://pypi.org/project/pico-lte-ota/)
 
 ## Introduction
 
-Micropython library for upgrading code over-the-air (OTA) - Sixfab Pico LTE port
+Micropython library for upgrading code over-the-air (OTA) - Sixfab Pico LTE version
 
 ## Preparation
 
@@ -80,7 +80,7 @@ The library can be installed using [upip](https://docs.micropython.org/en/latest
 
 ```python
 import upip
-upip.install('micropython-ota')
+upip.install('pico-lte-ota')
 ```
 
 ### Installation using mip (Micropython >= 1.19)
@@ -89,7 +89,7 @@ upip.install('micropython-ota')
 
 ```python
 import mip
-mip.install('github:olivergregorius/micropython_ota/micropython_ota.py')
+mip.install('github:johnlinwiz/pico_lte_ota/pico_lte_ota.py')
 ```
 
 #### Cross-compiled mpy-file
@@ -99,7 +99,7 @@ mip.install('github:olivergregorius/micropython_ota/micropython_ota.py')
 ```python
 import mip
 release_version='vX.Y.Z'
-mip.install(f'https://github.com/olivergregorius/micropython_ota/releases/download/{release_version}/micropython_ota.mpy')
+mip.install(f'https://github.com/olivergregorius/pico_lte_ota/releases/download/{release_version}/pico_lte_ota.mpy')
 ```
 
 ## Usage
@@ -112,7 +112,7 @@ This library provides two methods for
 The `ota_update` method might be called in the boot.py file, right after the network connection has been established:
 
 ```python
-import micropython_ota
+import pico_lte_ota
 
 # connect to network
 
@@ -120,7 +120,7 @@ ota_host = 'http://192.168.2.100'
 project_name = 'sample'
 filenames = ['boot.py', 'main.py']
 
-micropython_ota.ota_update(ota_host, project_name, filenames, use_version_prefix=True, hard_reset_device=True, soft_reset_device=False, timeout=5)
+pico_lte_ota.ota_update(ota_host, project_name, filenames, use_version_prefix=True, hard_reset_device=True, soft_reset_device=False, timeout=5)
 ```
 
 That's it. On boot the library retrieves the version-file from `http://192.168.2.100/sample/version` and evaluates its content against a locally persisted
@@ -134,7 +134,7 @@ after the successful update by calling `machine.reset()`. For just soft-resettin
 For regular checking for code updates the method `check_for_ota_update` might be called in the course of the regular application logic in main.py, e.g.:
 
 ```python
-import micropython_ota
+import pico_lte_ota
 import utime
 
 ota_host = 'http://192.168.2.100'
@@ -143,7 +143,7 @@ project_name = 'sample'
 while True:
     # do some other stuff
     utime.sleep(10)
-    micropython_ota.check_for_ota_update(ota_host, project_name, soft_reset_device=False, timeout=5)
+    pico_lte_ota.check_for_ota_update(ota_host, project_name, soft_reset_device=False, timeout=5)
 ```
 
 In this case on each iteration the library checks for a new version as described above and resets the device if a new version is available. By default a
@@ -160,7 +160,7 @@ username and password are sent as plain text i.e. completely unsecure.
 Here is the same example as above, but using HTTPS and Basic Authentication:
 
 ```python
-import micropython_ota
+import pico_lte_ota
 
 # connect to network
 
@@ -170,7 +170,7 @@ filenames = ['boot.py', 'main.py']
 user = 'otauser'
 passwd = 'topsecret' # it's best to place this credential is a secrets.py file
 
-micropython_ota.ota_update(ota_host, project_name, filenames, user=user, passwd=passwd, use_version_prefix=True, hard_reset_device=True, soft_reset_device=False, timeout=5)
+pico_lte_ota.ota_update(ota_host, project_name, filenames, user=user, passwd=passwd, use_version_prefix=True, hard_reset_device=True, soft_reset_device=False, timeout=5)
 ```
 
 There are plenty of tutorials online on how to set up secured HTTP file access on your webserver, but the basic steps are:
