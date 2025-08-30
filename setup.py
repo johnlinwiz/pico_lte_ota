@@ -3,7 +3,7 @@ import re
 import sys
 
 sys.path.pop(0)
-from setuptools import setup
+from setuptools import setup, find_packages
 
 sys.path.append("./sdist_upip")
 import sdist_upip
@@ -22,13 +22,12 @@ setup(
     description="Micropython library for upgrading code over-the-air (OTA) - Sixfab Pico LTE version",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    packages=[""],
+    packages=find_packages(),
     project_urls={"Source": "https://github.com/johnlinwiz/pico_lte_ota"},
     author="John Lin",
     author_email="johnlinwiz@gmail.com",
     classifiers=[
         "Programming Language :: Python :: 3",
-        "License :: OSI Approved :: MIT License",
         "Intended Audience :: Developers",
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
