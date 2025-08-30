@@ -15,11 +15,7 @@
             "latest"
         ],
         [
-            "github:org/micropython-additions",
-            "main"
-        ],
-        [
-            "gitlab:org/micropython-otheradditions",
+            "github:sixfab/pico_lte_micropython-sdk",
             "main"
         ]
     ],
