@@ -1,0 +1,9 @@
+# Add documentation files from the root directory
+include README.md
+
+# Recursively add all files in the 'docs' directory
+recursive-include docs *
+
+# Exclude compiled Python files from the package
+global-exclude __pycache__
+global-exclude *.py[cod]
