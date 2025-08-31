@@ -2,7 +2,6 @@
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/johnlinwiz/pico_lte_ota/build.yml?branch=main&label=Python%20Build&logo=github)](https://github.com/johnlinwiz/pico_lte_ota/actions/workflows/build.yml)
 [![GitHub](https://img.shields.io/github/license/johnlinwiz/pico_lte_ota?label=License)](https://github.com/johnlinwiz/pico_lte_ota/blob/HEAD/LICENSE)
-![Release](https://img.shields.io/github/v/release/johnlinwiz/pico_lte_ota?include_prereleases&color=success)
 ![MicroPython](https://img.shields.io/badge/micropython-Ok-green.svg)
 
 ## Introduction
