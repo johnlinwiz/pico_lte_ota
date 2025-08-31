@@ -3,10 +3,7 @@ import re
 import sys
 
 sys.path.pop(0)
-from setuptools import setup, find_packages
-
-sys.path.append("./sdist_upip")
-import sdist_upip
+from setuptools import setup
 
 version_reference = os.getenv("GITHUB_REF", default="0.1.0")
 release_version_search = re.search(r"(\d+.\d+.\d+)", version_reference)
@@ -22,7 +19,7 @@ setup(
     description="Micropython library for upgrading code over-the-air (OTA) - Sixfab Pico LTE version",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
-    packages=[""],
+    packages=["pico_lte_ota"],
     project_urls={"Source": "https://github.com/johnlinwiz/pico_lte_ota"},
     author="John Lin",
     author_email="johnlinwiz@gmail.com",
@@ -32,5 +29,4 @@ setup(
         "Topic :: Software Development :: Libraries :: Python Modules",
     ],
     keywords=["OTA", "Microcontroller", "Micropython"],
-    cmdclass={"sdist": sdist_upip.sdist},
 )

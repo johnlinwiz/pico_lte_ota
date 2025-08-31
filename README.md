@@ -1,9 +1,7 @@
 # pico_lte_ota
 
 [![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/johnlinwiz/pico_lte_ota/build.yml?branch=main&label=Python%20Build&logo=github)](https://github.com/johnlinwiz/pico_lte_ota/actions/workflows/build.yml)
-[![Python Versions](https://img.shields.io/pypi/pyversions/pico-lte-ota?label=Python)](https://pypi.org/project/pico-lte-ota/)
 [![GitHub](https://img.shields.io/github/license/johnlinwiz/pico_lte_ota?label=License)](https://github.com/johnlinwiz/pico_lte_ota/blob/HEAD/LICENSE)
-[![PyPI](https://img.shields.io/pypi/v/pico-lte-ota?label=PyPI)](https://pypi.org/project/pico-lte-ota/)
 
 ## Introduction
 
@@ -75,13 +73,6 @@ server-root/
 
 The library can be installed using [upip](https://docs.micropython.org/en/latest/reference/glossary.html#term-upip) or
 [mip](https://docs.micropython.org/en/latest/reference/packages.html). Ensure that the device is connected to the network.
-
-### Installation using upip (Micropython < 1.19)
-
-```python
-import upip
-upip.install('pico-lte-ota')
-```
 
 ### Installation using mip (Micropython >= 1.19)
 
