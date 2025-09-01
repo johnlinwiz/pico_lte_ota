@@ -6,7 +6,7 @@
 
 ## Introduction
 
-Micropython library for upgrading code over-the-air (OTA) - Sixfab Pico LTE version
+This is a MicroPython library for Over-The-Air (OTA) code updates, specifically designed for Sixfab Pico LTE devices. It enables remote firmware updates via HTTP/HTTPS servers for IoT devices running MicroPython.
 
 ## Preparation
 
