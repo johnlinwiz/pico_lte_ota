@@ -91,7 +91,7 @@ mip.install('github:johnlinwiz/pico_lte_ota/pico_lte_ota.py')
 ```python
 import mip
 release_version='vX.Y.Z'
-mip.install(f'https://github.com/olivergregorius/pico_lte_ota/releases/download/{release_version}/pico_lte_ota.mpy')
+mip.install(f'https://github.com/johnlinwiz/pico_lte_ota/releases/download/{release_version}/pico_lte_ota.mpy')
 ```
 
 ## Usage
